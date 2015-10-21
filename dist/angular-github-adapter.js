@@ -408,6 +408,7 @@ angular.module('pascalprecht.github-adapter').factory('$githubRepository', [
                 deferred.resolve(pulls);
               }
             });
+            return deferred.promise;
           },
           getPull: function (number) {
             var deferred = $q.defer();
@@ -483,9 +484,9 @@ angular.module('pascalprecht.github-adapter').factory('$githubUser', [
             });
             return deferred.promise;
           },
-          repos: function () {
+          repos: function (options) {
             var deferred = $q.defer();
-            user.repos(function (err, data) {
+            user.repos(options, function (err, data) {
               $rootScope.$apply(function () {
                 if (err) {
                   deferred.reject(err);
