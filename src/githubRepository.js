@@ -300,6 +300,19 @@ angular.module('pascalprecht.github-adapter')
         return deferred.promise;
       },
 
+      listTags: function () {
+        var deferred = $q.defer();
+
+        repo.listTags(function (err, tags) {
+          if (err) {
+            deferred.reject(err);
+          } else {
+            deferred.resolve(tags);
+          }
+        });
+        return deferred.promise;
+      },
+      
       getPull: function (number) {
         var deferred = $q.defer();
 

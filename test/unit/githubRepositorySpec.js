@@ -38,6 +38,7 @@ describe('pascalprecht.github-adapter', function () {
       expect(repo.getSha).toBeDefined();
       expect(repo.getTree).toBeDefined();
       expect(repo.listBranches).toBeDefined();
+      expect(repo.listTags).toBeDefined();
       expect(repo.move).toBeDefined();
       expect(repo.postBlob).toBeDefined();
       expect(repo.postTree).toBeDefined();
